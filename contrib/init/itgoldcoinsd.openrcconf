@@ -1,0 +1,33 @@
+# /etc/conf.d/itgoldcoinsd: config file for /etc/init.d/itgoldcoinsd
+
+# Config file location
+#ITGOLDCOINSD_CONFIGFILE="/etc/itgoldcoins/itgoldcoins.conf"
+
+# What directory to write pidfile to?  (created and owned by $ITGOLDCOINSD_USER)
+#ITGOLDCOINSD_PIDDIR="/var/run/itgoldcoinsd"
+
+# What filename to give the pidfile
+#ITGOLDCOINSD_PIDFILE="${ITGOLDCOINSD_PIDDIR}/itgoldcoinsd.pid"
+
+# Where to write itgoldcoinsd data (be mindful that the blockchain is large)
+#ITGOLDCOINSD_DATADIR="/var/lib/itgoldcoinsd"
+
+# User and group to own itgoldcoinsd process
+#ITGOLDCOINSD_USER="itgoldcoins"
+#ITGOLDCOINSD_GROUP="itgoldcoins"
+
+# Path to itgoldcoinsd executable
+#ITGOLDCOINSD_BIN="/usr/bin/itgoldcoinsd"
+
+# Nice value to run itgoldcoinsd under
+#ITGOLDCOINSD_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+ITGOLDCOINSD_OPTS="-disablewallet"
+
+# The timeout in seconds OpenRC will wait for itgoldcoinsd to terminate
+# after a SIGTERM has been raised.
+# Note that this will be mapped as argument to start-stop-daemon's
+# '--retry' option, which means you can specify a retry schedule
+# here. For more information see man 8 start-stop-daemon.
+ITGOLDCOINSD_SIGTERM_TIMEOUT=60

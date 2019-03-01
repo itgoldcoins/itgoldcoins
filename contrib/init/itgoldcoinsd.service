@@ -1,0 +1,22 @@
+[Unit]
+Description=Itgoldcoins's distributed currency daemon
+After=network.target
+
+[Service]
+User=itgoldcoins
+Group=itgoldcoins
+
+Type=forking
+PIDFile=/var/lib/itgoldcoinsd/itgoldcoinsd.pid
+ExecStart=/usr/bin/itgoldcoinsd -daemon -pid=/var/lib/itgoldcoinsd/itgoldcoinsd.pid \
+-conf=/etc/itgoldcoins/itgoldcoins.conf -datadir=/var/lib/itgoldcoinsd -disablewallet
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

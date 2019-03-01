@@ -1,0 +1,6 @@
+usr/local/bin/itgoldcoins-qt usr/bin
+share/pixmaps/itgoldcoins32.xpm usr/share/pixmaps
+share/pixmaps/itgoldcoins16.xpm usr/share/pixmaps
+share/pixmaps/itgoldcoins128.png usr/share/pixmaps
+debian/itgoldcoins-qt.desktop usr/share/applications
+debian/itgoldcoins-qt.protocol usr/share/kde4/services/
