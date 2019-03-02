@@ -1,9 +1,7 @@
-Itgoldcoins Core integration/staging tree
+Itgoldcoins Core 
 =====================================
 
-[![Build Status](https://travis-ci.org/itgoldcoins/itgoldcoins.svg?branch=master)](https://travis-ci.org/itgoldcoins/itgoldcoins)
-
-https://itgoldcoinscore.org
+https://www.itgolds.org/
 
 What is Itgoldcoins?
 ----------------
@@ -15,8 +13,8 @@ out collectively by the network. Itgoldcoins Core is the name of open source
 software which enables the use of this currency.
 
 For more information, as well as an immediately useable, binary version of
-the Itgoldcoins Core software, see https://itgoldcoins.org/en/download, or read the
-[original whitepaper](https://itgoldcoinscore.org/itgoldcoins.pdf).
+the Itgoldcoins Core software, see https://www.itgolds.org/, or read the
+[original whitepaper](https://www.itgolds.org/itgc%E7%99%BD%E7%9A%AE%E4%B9%A6%E4%BA%9A%E5%A4%AA%E5%8C%BA%E7%A4%BE%E5%8C%BA%E4%BF%AE%E8%AE%A2%E7%89%88.pdf).
 
 License
 -------
@@ -24,59 +22,41 @@ License
 Itgoldcoins Core is released under the terms of the MIT license. See [COPYING](COPYING) for more
 information or see https://opensource.org/licenses/MIT.
 
-Development Process
--------------------
+How to build?
+-------------
+Tested in Ubuntu 16.04
 
-The `master` branch is regularly built and tested, but is not guaranteed to be
-completely stable. [Tags](https://github.com/itgoldcoins/itgoldcoins/tags) are created
-regularly to indicate new official, stable release versions of Itgoldcoins Core.
+Build requirements:
 
-The contribution workflow is described in [CONTRIBUTING.md](CONTRIBUTING.md).
+    sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils 
+    sudo add-apt-repository ppa:bitcoin/bitcoin
+    sudo apt-get update
+    sudo apt-get install libdb4.8-dev libdb4.8++-dev
 
-The developer [mailing list](https://lists.linuxfoundation.org/mailman/listinfo/itgoldcoins-dev)
-should be used to discuss complicated or controversial changes before working
-on a patch set.
+Optional:
 
-Developer IRC can be found on Freenode at #itgoldcoins-core-dev.
+    sudo apt-get install libminiupnpc-dev (see --with-miniupnpc and --enable-upnp-default)
 
-Testing
--------
+Dependencies for the GUI: Ubuntu & Debian
+-----------------------------------------
 
-Testing and code review is the bottleneck for development; we get more pull
-requests than we can review and test on short notice. Please be patient and help out by testing
-other people's pull requests, and remember this is a security-critical project where any mistake might cost people
-lots of money.
+If you want to build Itgoldcoins-Qt, make sure that the required packages for Qt development
+are installed. Either Qt 5 or Qt 4 are necessary to build the GUI.
+If both Qt 4 and Qt 5 are installed, Qt 5 will be used. Pass `--with-gui=qt4` to configure to choose Qt4.
+To build without GUI pass `--without-gui`.
 
-### Automated Testing
+To build with Qt 5 (recommended) you need the following:
 
-Developers are strongly encouraged to write [unit tests](/doc/unit-tests.md) for new code, and to
-submit new unit tests for old code. Unit tests can be compiled and run
-(assuming they weren't disabled in configure) with: `make check`
+    sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler
 
-There are also [regression and integration tests](/qa) of the RPC interface, written
-in Python, that are run automatically on the build server.
-These tests can be run with: `qa/pull-tester/rpc-tests.py`
+miniupnpc
+---------
 
-The Travis CI system makes sure that every pull request is built for Windows
-and Linux, OSX, and that unit and sanity tests are automatically run.
+[miniupnpc](http://miniupnp.free.fr/) may be used for UPnP port mapping.  It can be downloaded from [here](
+http://miniupnp.tuxfamily.org/files/).  UPnP support is compiled in and
+turned off by default.  See the configure options for upnp behavior desired:
 
-### Manual Quality Assurance (QA) Testing
+	--without-miniupnpc      No UPnP support miniupnp not required
+	--disable-upnp-default   (the default) UPnP support turned off by default at runtime
+	--enable-upnp-default    UPnP support turned on by default at runtime
 
-Changes should be tested by somebody other than the developer who wrote the
-code. This is especially important for large or high-risk changes. It is useful
-to add a test plan to the pull request description if testing the changes is
-not straightforward.
-
-Translations
-------------
-
-Changes to translations as well as new translations can be submitted to
-[Itgoldcoins Core's Transifex page](https://www.transifex.com/projects/p/itgoldcoins/).
-
-Translations are periodically pulled from Transifex and merged into the git repository. See the
-[translation process](doc/translation_process.md) for details on how this works.
-
-**Important**: We do not accept translation changes as GitHub pull requests because the next
-pull from Transifex would automatically overwrite them again.
-
-Translators should also subscribe to the [mailing list](https://groups.google.com/forum/#!forum/itgoldcoins-translators).
