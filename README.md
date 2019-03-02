@@ -60,3 +60,12 @@ turned off by default.  See the configure options for upnp behavior desired:
 	--disable-upnp-default   (the default) UPnP support turned off by default at runtime
 	--enable-upnp-default    UPnP support turned on by default at runtime
 
+To Build
+---------------------
+
+```bash
+./autogen.sh
+./configure --enable-upnp-default --disable-tests --disable-bench
+make
+make install # optional
+```
