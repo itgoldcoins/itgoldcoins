@@ -12,7 +12,9 @@ with no central authority: managing transactions and issuing money are carried
 out collectively by the network. Itgoldcoins Core is the name of open source
 software which enables the use of this currency.
 
-It designed to use blockchain technology to recirculate the second-hand electronic products. When you want to sell your old mobile phone, the complex exchanging rate of cross-border or cross - regional transactions makes it to be a trouble. Even if you want to handset it to someone who really need,you don't know where to send to.At the same time,the world's environmental protection organizations also need a channel to select the valuable products and bring into greatest use.But due to insufficient funding,what they can do is very few.
+Itgoldcoins is an innovative cryptocurrency which use yescryptR16 algorithm to POW(Proof Of Work).YescryptR16 in particular is designed to be CPU-friendly, GPU-unfriendly and ASIC resistance. Unfortunately, being GPU-unfriendly also means that eventual FPGA and ASIC implementations will only compete with CPUs.
+
+The Itgoldcoins designed to use blockchain technology to recirculate the second-hand electronic products. When you want to sell your old mobile phone, the complex exchanging rate of cross-border or cross - regional transactions makes it to be a trouble. Even if you want to handset it to someone who really need,you don't know where to send to.At the same time,the world's environmental protection organizations also need a channel to select the valuable products and bring into greatest use.But due to insufficient funding,what they can do is very few.
 
 For more information, as well as an immediately useable, binary version of
 the Itgoldcoins Core software, see https://www.itgolds.org/, or read the
